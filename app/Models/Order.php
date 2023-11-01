@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+
+    public function orderLine(){
+        return $this->hasOne(OrdersLines::class,'order_id');
+    }
 }
